@@ -1,4 +1,4 @@
-import TransactionModel from "../models/TransactionModel"
+import TransactionModel from "../models/TransactionModel.js"
 
 
 export const createTransaction = async ({userId,eventId,amount}) => {

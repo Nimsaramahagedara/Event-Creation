@@ -6,6 +6,7 @@ import EventCreate from './pages/user/EventCreate'
 import EventRequestList from './pages/admin/EventRequestList'
 import HomeLayout from './pages/common/HomeLayout'
 import NotFound from './pages/NotFound'
+import EventList from './pages/user/EventList'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<HomeLayout />} >
           <Route path='' element={<Home />} />
           <Route path='event-create' element={<EventCreate />} />
+          <Route path='events' element={<EventList />} />
         </Route>
         <Route path='*' element={<NotFound />} />
 

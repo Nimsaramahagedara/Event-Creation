@@ -16,7 +16,7 @@ const TopNav = () => {
             <h1 className='text-3xl font-bold text-blue-500 w-max p-2'>BoardMe</h1>
             <ul className='flex items-center w-max gap-2 justify-center'>
                 <Link to={'/'} className={`px-4 py-2 hover:bg-blue-500 font-semibold ${isCurrentLink('/') ? 'bg-blue-500' : ''}`}>Home</Link>
-                <Link to={'events'} className={`px-4 py-2 hover:bg-blue-500 font-semibold ${isCurrentLink('/events') ? 'bg-blue-500' : ''}`}>Events</Link>
+                <Link to={'/events'} className={`px-4 py-2 hover:bg-blue-500 font-semibold ${isCurrentLink('/events') ? 'bg-blue-500' : ''}`}>Events</Link>
                 <Link to={'myevents'} className={`px-4 py-2 hover:bg-blue-500 font-semibold ${isCurrentLink('/myevents') ? 'bg-blue-500' : ''}`}>MyEvents</Link>
                 <Link to={'/other'} className={`px-4 py-2 hover:bg-blue-500 font-semibold ${isCurrentLink('/other') ? 'bg-blue-500' : ''}`}>Other</Link>
             </ul>
