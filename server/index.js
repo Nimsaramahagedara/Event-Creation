@@ -3,13 +3,14 @@ import morgan from 'morgan';
 import dotenv from 'dotenv'
 import { dbConfig } from './utils/dbConfig.js';
 import eventRouter from './routes/EventRoutes.js';
+import cors from 'cors';
+
 dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 3001
 
-
+app.use(cors());
 app.use(morgan('combined'));
-
 app.use('event',eventRouter)
 
 dbConfig().then(() => {
