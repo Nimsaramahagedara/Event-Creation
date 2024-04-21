@@ -7,7 +7,9 @@ const HomeLayout = () => {
     return (
         <main>
             <TopNav />
-            <Outlet />
+            <div className='min-h-screen bg-slate-200'>
+                <Outlet />
+            </div>
             <Footer />
         </main>
     )
