@@ -2,6 +2,9 @@ import mongoose from "mongoose";
 
 // Declare the Schema of the Mongo model
 var eventSchema = new mongoose.Schema({
+    userId:{
+        type:mongoose.SchemaTypes.ObjectId
+    },
     businessName: {
         type: String,
         required: true,
