@@ -1,4 +1,5 @@
 import EventModel from "../models/EventModel.js";
+import { createTransaction } from "./TransactionController.js";
 
 export const getAllEvents = async(req,res)=>{
     try {
@@ -26,7 +27,12 @@ export const createEvent = async(req,res)=>{
         const data = req.body;
         const createdEvent = await EventModel.create(data);
 
-        res.status(200).json(createdEvent)
+        const isPaid = await createTransaction(data?.userId,createdEvent?._id,data?.amount)
+
+        res.status(200).json({
+            isPaid,
+            createdEvent
+        })
     } catch (error) {
         console.log(error);
         res.status(200).json({message:error.message})
