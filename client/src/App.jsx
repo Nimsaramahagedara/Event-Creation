@@ -9,8 +9,7 @@ import NotFound from './pages/NotFound'
 import EventList from './pages/user/EventList'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+ 
   return (
     <BrowserRouter>
       <Routes>
@@ -18,6 +17,7 @@ function App() {
           <Route path='' element={<Home />} />
           <Route path='event-create' element={<EventCreate />} />
           <Route path='events' element={<EventList />} />
+
         </Route>
         <Route path='*' element={<NotFound />} />
 
