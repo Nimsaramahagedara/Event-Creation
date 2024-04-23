@@ -15,7 +15,7 @@ import Booking from './pages/user/Booking'
 
 function App() {
 
-  axios.defaults.baseURL = 'http://localhost:3001'
+  axios.defaults.baseURL = import.meta.env.VITE_SERVER
   return (
     <BrowserRouter>
       <ToastContainer />
