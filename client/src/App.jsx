@@ -7,9 +7,11 @@ import EventRequestList from './pages/admin/EventRequestList'
 import HomeLayout from './pages/common/HomeLayout'
 import NotFound from './pages/NotFound'
 import EventList from './pages/user/EventList'
+import axios, { Axios } from 'axios'
 
 function App() {
  
+  axios.defaults.baseURL = 'http://localhost:3001'
   return (
     <BrowserRouter>
       <Routes>

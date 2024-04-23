@@ -38,11 +38,11 @@ var eventSchema = new mongoose.Schema({
         type:Number,
         default:0
     },
-    coodinatorName: {
+    coordinatorName: {
         type: String,
         required: true
     },
-    coodinatorContactNo: {
+    coordinatorContactNo: {
         type: String,
         required: true
     },

@@ -27,7 +27,8 @@ const EventCreate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('localhost:5000/event/', formData);
+      console.log(formData);
+      const response = await axios.post('event', formData);
       console.log(response.data);
     } catch (error) {
       console.error('Error creating event:', error);

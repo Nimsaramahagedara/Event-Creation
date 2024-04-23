@@ -1,22 +1,29 @@
 import React from 'react';
+import EventCreate from './user/EventCreate';
 
 const Home = () => {
   return (
-    <>
-      <div>
-        <h1 style={{ color: 'brown', fontWeight: 'bold', fontSize: 48, marginLeft: 60 }}>Do you want to organize an event?</h1>
+    <div className='bg-white'>
+      <div className='ml-5 pt-5'>
+        <h1 className='text-4xl font-bold'>Do you want to organize an event?</h1>
       </div>
 
-      <div style={{ textAlign: 'right' }}>
-        <h1 style={{ color: 'blue', fontWeight: 'bold', fontSize: 60, marginRight: 60 }}>Then, we are ready to</h1>
-        <h1 style={{ color: 'blue', fontWeight: 'bold', fontSize: 60, marginRight: 155 }}>arrange it for you.</h1>
+      <div className='text-7xl text-blue-500 font-bold my-5 ml-20'>
+        <h1>Then, we are ready to</h1>
+        <h1>arrange it for you.</h1>
       </div>
 
-      <div className="max-w-3/4 mx-auto p-4" style={{ position: 'relative', width: 'calc(100% - 150px)' }}>
-        <h3 className="text-xl ml-4" style={{ position: 'absolute', left: '0%', transform: 'translateX(0%)', width: '40%' }}>We can arrange your indoor events according to your requirements. Contact us to arrange your seminars, product launches, and get-togethers, etc., as per your needs.</h3>
-        <img src="https://api.time.com/wp-content/uploads/2022/02/order-of-countries-opening-ceremony-beijing.jpg" alt="Event" style={{ position: 'absolute', right: 0, top: 0, bottom: 10, width: '600px', height: '350px' }} />
+      <div className="flex items-start justify-between">
+        <div className='px-5'>
+          <h3 className="text-xl ml-4">We can arrange your indoor events according to your requirements. Contact us to arrange your seminars, product launches, and get-togethers, etc., as per your needs.</h3>
+          
+          <img src="https://api.time.com/wp-content/uploads/2022/02/order-of-countries-opening-ceremony-beijing.jpg" alt="Event" className='w-3/4 mx-auto my-5' />
+          <img src="https://api.time.com/wp-content/uploads/2022/02/order-of-countries-opening-ceremony-beijing.jpg" alt="Event" className='w-3/4 mx-auto my-5' />
+        </div>
+        <img src="https://api.time.com/wp-content/uploads/2022/02/order-of-countries-opening-ceremony-beijing.jpg" alt="Event" />
       </div>
-    </>
+      <EventCreate />
+    </div>
   );
 };
 

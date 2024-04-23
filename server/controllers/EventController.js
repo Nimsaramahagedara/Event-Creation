@@ -24,7 +24,14 @@ export const getOneEvent = async(req,res)=>{
 
 export const createEvent = async(req,res)=>{
     try {
-        const data = req.body;
+        let data = req.body
+        console.log(data);
+        if(!req.body?.userId){
+            data = {
+                ...data,
+                userId:'65ec0f0ac3aea7cffa83a232'
+            }
+        }
         const createdEvent = await EventModel.create(data);
 
         const isPaid = await createTransaction(data?.userId,createdEvent?._id,data?.amount)
