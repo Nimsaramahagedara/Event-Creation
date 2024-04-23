@@ -27,8 +27,24 @@ const EventCreate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(formData);
-      const response = await axios.post('event', formData);
+      const formD = new FormData();
+      formD.append('image', formData.image);
+      formD.append('businessName', formData.businessName);
+      formD.append('eventIdea', formData.eventIdea);
+      formD.append('description', formData.description);
+      formD.append('date', formData.date);
+      formD.append('timeFrom', formData.timeFrom);
+      formD.append('timeTo', formData.timeTo);
+      formD.append('city', formData.city);
+      formD.append('coordinatorName', formData.coordinatorName);
+      formD.append('coordinatorContactNo', formData.coordinatorContactNo);
+      formD.append('paymentMethod', formData.paymentMethod);
+      console.log(formD);
+      const response = await axios.post('event', formD, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
       console.log(response.data);
     } catch (error) {
       console.error('Error creating event:', error);

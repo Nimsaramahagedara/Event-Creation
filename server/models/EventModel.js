@@ -54,6 +54,10 @@ var eventSchema = new mongoose.Schema({
         type:String,
         default:'pending',
         enum:['pending','approved','rejected']
+    },
+    image:{
+        type:String,
+        default:"https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_640.jpg"
     }
 });
 

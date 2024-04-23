@@ -23,6 +23,7 @@ const Home = () => {
         <img src="https://api.time.com/wp-content/uploads/2022/02/order-of-countries-opening-ceremony-beijing.jpg" alt="Event" />
       </div>
       <EventCreate />
+      <p className='text-xl font-bold my-5 text-center'>You can participate in our upcoming events organized by our company. To contact us please click the "Upcomin Events" button and book the event</p>
     </div>
   );
 };

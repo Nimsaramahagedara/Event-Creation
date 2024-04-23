@@ -1,10 +1,30 @@
-import jwt from 'jsonwebtoken';
+import fs from 'fs'
+import multer from 'multer';
+
+const createUploadsDirectory = () => {
+    const directory = 'uploads';
+    
+    if (!fs.existsSync(directory)) {
+
+        fs.mkdirSync(directory);
+        console.log(`Directory '${directory}' created successfully.`);
+    } else {
+        console.log(`Connecting to '${directory}' directory.`);
+    }
+};
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/') // save directory
+    },
+    filename: function (req, file, cb) {
+        console.log(file.originalname);
+        cb(null, Date.now() + '-' + file.originalname) // Creating unique file names
+    }
+});
+createUploadsDirectory();
 
 
-export const jwtSign = (payload)=>{
-  return jwt.sign(payload,process.env.SECRET_KEY || 'SLIIT',{expiresIn:'1d'});
-}
+export const upload = multer({ storage: storage });
 
-export const jwtDecode = (token)=>{
-    return jwt.verify(token,process.env.SECRET_KEY || 'SLIIT')
-}
+

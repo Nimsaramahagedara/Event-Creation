@@ -24,12 +24,14 @@ export const getOneEvent = async(req,res)=>{
 
 export const createEvent = async(req,res)=>{
     try {
+        const imageName = req.file.filename;
         let data = req.body
-        console.log(data);
+        console.log(data.body);
         if(!req.body?.userId){
             data = {
                 ...data,
-                userId:'65ec0f0ac3aea7cffa83a232'
+                userId:'65ec0f0ac3aea7cffa83a232',
+                image:process.env.SELF_ADDRESS+'/uploads/'+imageName
             }
         }
         const createdEvent = await EventModel.create(data);
