@@ -53,8 +53,13 @@ const EventCreate = () => {
     }
   };
 
+  const styles = {
+    backgroundImage:'url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg)',
+    backgroundSize:'cover'
+  }
+
   return (
-    <>
+    <div style={styles}>
       <div className="max-w-xl mx-auto">
         <br />
         <h1 className="text-2xl font-semibold mb-4">Event Creating Form</h1>
@@ -115,7 +120,7 @@ const EventCreate = () => {
           </div><br />
         </form>
       </div>
-    </>
+    </div>
   );
 };
 
