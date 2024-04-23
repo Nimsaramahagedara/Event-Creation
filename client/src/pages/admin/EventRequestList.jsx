@@ -130,6 +130,13 @@ const EventRequestList = () => {
                   <input className="border p-3" name='coordinatorName' value={selectedRequest?.coordinatorName} onChange={handleChange}/>
                   <input className="border p-3" name='timeFrom' value={selectedRequest?.timeFrom} onChange={handleChange}/>
                   <input type='date' className="border p-3" name='date' value={new Date(selectedRequest?.date).toISOString().split('T')[0]} onChange={handleChange}/>
+
+
+                  <select name="status" onChange={handleChange} defaultValue={selectedRequest?.status}>
+                    <option value='pending'>pending</option>
+                    <option value="approved">approved</option>
+                    <option value="rejected">rejected</option>
+                  </select>
               </div>
               {/* <input type="file" onChange={handleImageChange} className="block mx-auto mb-4" /> */}
               {/* Additional fields for updating event details can be added here */}
