@@ -57,7 +57,7 @@ const EventList = () => {
                 {events?.map((event, index) => (
                     <div key={index} className={`relative w-1/2 block mt-${index === 0 ? '12' : '8'}`}>
                         <div className="relative">
-                            <img src={event?.image} alt={`Event ${event?._id}`} className="w-full h-auto rounded-lg" />
+                            <img src={import.meta.env.VITE_SERVER +event?.image} alt={`Event ${event?._id}`} className="w-full h-auto rounded-lg" />
                             <div className="mt-2 text-center font-bold">{event?.description}</div>
                             <span className="bg-gray-800 text-white px-2 py-1 rounded-full absolute top-0 right-0 m-2">ID: {event?._id}</span>
                             <button onClick={() => handleBookNowClick(event)} className="bg-green-500 text-white px-4 py-2 rounded-md mt-4 absolute right-0">Book Now</button> <br /><br /><br />

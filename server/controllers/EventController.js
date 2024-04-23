@@ -51,7 +51,7 @@ export const createEvent = async (req, res) => {
             data = {
                 ...data,
                 userId: '65ec0f0ac3aea7cffa83a232',
-                image: process.env.SELF_ADDRESS + '/uploads/' + imageName
+                image: '/uploads/' + imageName
             }
         }
         const createdEvent = await EventModel.create(data);

@@ -102,7 +102,7 @@ const EventRequestList = () => {
                   <td className="border p-3">{new Date(request?.date).toDateString()}</td>
                   <td className="border p-3">{request?.timeFrom}</td>
                   <td className="border p-3">
-                    <img src={request?.image} alt="Event" className="h-16 w-auto mx-auto" />
+                    <img src={import.meta.env.VITE_SERVER +request?.image} alt="Event" className="h-16 w-auto mx-auto" />
                   </td>
                   <td className={`border p-3 ${request?.status === 'pending' ? 'text-yellow-600' : 'text-green-600'}`}>{request?.status}</td>
                   <td className="border p-3">
