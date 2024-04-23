@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios'; // Import axios for handling form submission
+import { toast } from 'react-toastify';
 
 const EventCreate = () => {
   const [formData, setFormData] = useState({
@@ -46,6 +47,7 @@ const EventCreate = () => {
         }
       });
       console.log(response.data);
+      toast.success('Event Request Saved, Please Pay For Continue')
     } catch (error) {
       console.error('Error creating event:', error);
     }

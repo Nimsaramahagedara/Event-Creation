@@ -9,11 +9,15 @@ import NotFound from './pages/NotFound'
 import EventList from './pages/user/EventList'
 import axios, { Axios } from 'axios'
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
- 
+
   axios.defaults.baseURL = 'http://localhost:3001'
   return (
     <BrowserRouter>
+      <ToastContainer />
       <Routes>
         <Route path='/' element={<HomeLayout />} >
           <Route path='' element={<Home />} />
