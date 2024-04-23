@@ -11,6 +11,7 @@ import axios, { Axios } from 'axios'
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Booking from './pages/user/Booking'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='' element={<Home />} />
           <Route path='event-create' element={<EventCreate />} />
           <Route path='events' element={<EventList />} />
+          <Route path='book/:id' element={<Booking />} />
 
         </Route>
         <Route path='*' element={<NotFound />} />

@@ -49,7 +49,7 @@ const EventCreate = () => {
         }
       });
       console.log(response.data);
-      toast.success('Event Request Saved, Please Pay For Continue')
+      toast.success('Event Request Submitted')
     } catch (error) {
       console.error('Error creating event:', error);
       toast.error(error?.response?.data?.message)

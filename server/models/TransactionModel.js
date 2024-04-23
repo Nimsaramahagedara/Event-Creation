@@ -6,9 +6,9 @@ var transactionSchema = new mongoose.Schema({
         type: Number,
         default:0
     },
-    eventId: {
+    bookingId: {
         type: mongoose.SchemaTypes.ObjectId,
-        ref: 'Events'
+        ref: 'Bookings'
     }
 }, { timestamps: true });
 

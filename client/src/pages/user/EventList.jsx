@@ -1,10 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const EventList = () => {
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [events, setEvents] = useState([])
+    const navigate = useNavigate()
 
     // const events = [
     //     {
@@ -72,13 +73,16 @@ const EventList = () => {
                 {selectedEvent && (
                     <div className="fixed top-10 right-0 bottom-10 left-0 flex justify-center items-center">
                         <div className="bg-gray-800 bg-opacity-75 absolute top-10 left-0 bottom-10 w-full h-auto flex justify-center items-center">
-                            <div className="bg-white p-8 rounded-lg flex" style={{ marginTop: '10px', marginBottom: '10px', height: '80%' }}>
+                            <div className="bg-white p-8 rounded-lg flex justify-between" style={{ marginTop: '10px', marginBottom: '10px', height: '80%' }}>
                                 <button onClick={handleClosePopup} className="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                     </svg>
                                 </button>
-                                <img src={selectedEvent?.image} alt={`Event ${selectedEvent?._id}`} className="w-1/4 h-auto rounded-lg mr-4" />
+                                <div className='w-1/3'>
+                                <img src={selectedEvent?.image} alt={`Event ${selectedEvent?._id}`} className="w-full h-full object-cover rounded-lg mr-4" />
+                                </div>
+
                                 <div>
                                     <h2 className="text-xl font-bold mb-4">Event Details</h2>
                                     <p>{selectedEvent?.description}</p><br />
@@ -87,6 +91,7 @@ const EventList = () => {
                                     <p><strong>Other Details:</strong> {selectedEvent?.otherDetails}</p>
 
                                 </div>
+                                <button className='px-4 py-2 rounded-xl bg-green-400 text-white' onClick={()=>navigate(`/book/${selectedEvent._id}`)}>Buy Now</button>
                             </div>
                         </div>
                     </div>
