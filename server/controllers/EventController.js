@@ -55,7 +55,7 @@ export const createEvent = async (req, res) => {
             }
         }
         const createdEvent = await EventModel.create(data);
-
+        await sendEmail(data?.email, "Event Submitted", { name: data.coordinatorName, description: `You hace successfull submitted the event id : ${id}  /  Please do the payment to continue` });
         res.status(200).json({
             createdEvent
         })
