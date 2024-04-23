@@ -1,4 +1,5 @@
 import EventModel from "../models/EventModel.js";
+import { sendEmail } from "../utils/sendEmail.js";
 import { createTransaction } from "./TransactionController.js";
 
 export const getAllEvents = async (req, res) => {
@@ -33,6 +34,7 @@ export const payForEvent = async (req, res) => {
         const newSave = await data.save()
 
         const t = await createTransaction({eventId:data._id,amount});
+        await sendEmail(data?.email, "Payment Success", { name: data.coordinatorName, description: `You hace successfull paid ${amount} LKR for the event id : ${id}` });
 
         res.status(200).json(t);
     } catch (error) {
