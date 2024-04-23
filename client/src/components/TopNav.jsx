@@ -18,7 +18,7 @@ const TopNav = () => {
                 <Link to={'/'} className={`px-4 py-2 hover:bg-blue-500 font-semibold ${isCurrentLink('/') ? 'bg-blue-500' : ''}`}>Home</Link>
                 <Link to={'/events'} className={`px-4 py-2 hover:bg-blue-500 font-semibold ${isCurrentLink('/events') ? 'bg-blue-500' : ''}`}>Events</Link>
                 <Link to={'event-create'} className={`px-4 py-2 hover:bg-blue-500 font-semibold ${isCurrentLink('/event-create') ? 'bg-blue-500' : ''}`}>MyEvents</Link>
-                <Link to={'/other'} className={`px-4 py-2 hover:bg-blue-500 font-semibold ${isCurrentLink('/other') ? 'bg-blue-500' : ''}`}>Other</Link>
+                <Link to={'/allevents'} className={`px-4 py-2 hover:bg-blue-500 font-semibold ${isCurrentLink('/allevents') ? 'bg-blue-500' : ''}`}>Other</Link>
             </ul>
             <div className='flex items-center justify-end gap-4'>
                 <button className='px-4 py-2 bg-blue-500 hover:bg-blue-800 font-bold text-white'>Sign in</button>

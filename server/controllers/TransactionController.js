@@ -1,9 +1,9 @@
 import TransactionModel from "../models/TransactionModel.js"
 
 
-export const createTransaction = async ({userId,eventId,amount}) => {
+export const createTransaction = async ({eventId,amount}) => {
     try {
-        const createTransaction = await TransactionModel.create({userId,eventId,amount})
+        const createTransaction = await TransactionModel.create({eventId,amount})
         return true
     } catch (error) {
         return false

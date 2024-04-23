@@ -9,6 +9,10 @@ var eventSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    email:{
+        type:String,
+        required:true
+    },
     eventIdea: {
         type: String,
         required: true,
@@ -53,7 +57,7 @@ var eventSchema = new mongoose.Schema({
     status:{
         type:String,
         default:'pending',
-        enum:['pending','approved','rejected']
+        enum:['pending','paid','approved','rejected']
     },
     image:{
         type:String,

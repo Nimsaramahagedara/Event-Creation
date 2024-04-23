@@ -50,6 +50,7 @@ const EventCreate = () => {
       toast.success('Event Request Saved, Please Pay For Continue')
     } catch (error) {
       console.error('Error creating event:', error);
+      toast.error(error?.response?.data?.message)
     }
   };
 
@@ -72,6 +73,10 @@ const EventCreate = () => {
             <div>
               <label htmlFor="eventIdea" className="block mb-1">Event Idea</label>
               <input type="text" id="eventIdea" name="eventIdea" value={formData.eventIdea} onChange={handleChange} className="w-full border rounded-md px-3 py-2" required />
+            </div>
+            <div>
+              <label htmlFor="eventIdea" className="block mb-1">Email To Contact</label>
+              <input type="email" id="email" name="email" value={formData?.email} onChange={handleChange} className="w-full border rounded-md px-3 py-2" required />
             </div>
             <div className="col-span-2">
               <label htmlFor="description" className="block mb-1">Description</label>

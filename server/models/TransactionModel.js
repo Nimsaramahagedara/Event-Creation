@@ -2,12 +2,9 @@ import mongoose from "mongoose";
 
 // Declare the Schema of the Mongo model
 var transactionSchema = new mongoose.Schema({
-    userId: {
-        type: mongoose.SchemaTypes.ObjectId
-    },
     amount: {
-        type: String,
-        required: true,
+        type: Number,
+        default:0
     },
     eventId: {
         type: mongoose.SchemaTypes.ObjectId,
