@@ -15,6 +15,7 @@ const EventCreate = () => {
     coordinatorContactNo: '',
     paymentMethod: 'credit', // Default to credit
     image: null, // For image upload
+    email:''
   });
 
   const handleChange = (e) => {
@@ -40,6 +41,7 @@ const EventCreate = () => {
       formD.append('coordinatorName', formData.coordinatorName);
       formD.append('coordinatorContactNo', formData.coordinatorContactNo);
       formD.append('paymentMethod', formData.paymentMethod);
+      formD.append('email', formData.email);
       console.log(formD);
       const response = await axios.post('event', formD, {
         headers: {

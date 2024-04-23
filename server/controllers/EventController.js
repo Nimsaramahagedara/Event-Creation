@@ -46,7 +46,7 @@ export const createEvent = async (req, res) => {
     try {
         const imageName = req.file.filename;
         let data = req.body
-        console.log(data.body);
+        console.log('Data ', data);
         if (!req.body?.userId) {
             data = {
                 ...data,
@@ -55,7 +55,7 @@ export const createEvent = async (req, res) => {
             }
         }
         const createdEvent = await EventModel.create(data);
-        await sendEmail(data?.email, "Event Submitted", { name: data.coordinatorName, description: `You hace successfull submitted the event id : ${id}  /  Please do the payment to continue` });
+        await sendEmail(data?.email, "Event Submitted", { name: data.coordinatorName, description: `You hace successfull submitted the event id : ${createdEvent._id}  /  Please do the payment to continue` });
         res.status(200).json({
             createdEvent
         })
