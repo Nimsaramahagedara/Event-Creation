@@ -122,7 +122,7 @@ const EventRequestList = () => {
                 <h3 className="text-lg font-semibold">Update Event</h3>
                 <button onClick={handleClosePopup} className="text-red-600">Close</button>
               </div>
-              <img src={selectedRequest?.image} alt="Event" className="h-64 w-auto mx-auto mb-4" />
+              <img src={import.meta.env.VITE_SERVER + selectedRequest?.image} alt="Event" className="h-64 w-auto mx-auto mb-4" />
 
               <div>
               <input className="border p-3" name='businessName' value={selectedRequest?.businessName} onChange={handleChange}/>
